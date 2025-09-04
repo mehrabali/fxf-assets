@@ -1,0 +1,238 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa" xmlns:odk="http://www.opendatakit.org/xforms" xmlns:orx="http://openrosa.org/xforms/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <h:head>
+    <h:title>Sample Form - Cascading selects</h:title>
+    <model>
+      <itext>
+        <translation default="true()" lang="english">
+          <text id="static_instance-yesno-0">
+            <value>Yes</value>
+          </text>
+          <text id="static_instance-yesno-1">
+            <value>No</value>
+          </text>
+          <text id="static_instance-region-0">
+            <value>Africa</value>
+          </text>
+          <text id="static_instance-region-1">
+            <value>South Asia</value>
+          </text>
+          <text id="static_instance-country-0">
+            <value>Zimbabwe</value>
+          </text>
+          <text id="static_instance-country-1">
+            <value>South Africa</value>
+          </text>
+          <text id="static_instance-country-2">
+            <value>India</value>
+          </text>
+          <text id="static_instance-country-3">
+            <value>Bangladesh</value>
+          </text>
+          <text id="static_instance-city-0">
+            <value>Harare</value>
+          </text>
+          <text id="static_instance-city-1">
+            <value>Bulawayo</value>
+          </text>
+          <text id="static_instance-city-2">
+            <value>Pretoria</value>
+          </text>
+          <text id="static_instance-city-3">
+            <value>Cape Town</value>
+          </text>
+          <text id="static_instance-city-4">
+            <value>New Delhi</value>
+          </text>
+          <text id="static_instance-city-5">
+            <value>Chennai</value>
+          </text>
+          <text id="static_instance-city-6">
+            <value>Dhaka</value>
+          </text>
+          <text id="static_instance-city-7">
+            <value>Chittagong</value>
+          </text>
+        </translation>
+      </itext>
+      <instance>
+        <scto.samplecascading.v1 id="scto.samplecascading.v1" version="2509041612">
+          <starttime/>
+          <endtime/>
+          <deviceid/>
+          <devicephonenum/>
+          <device_info/>
+          <duration/>
+          <intronote/>
+          <consent/>
+          <survey_region/>
+          <survey_country/>
+          <survey_city/>
+          <name/>
+          <age/>
+          <confirmnote/>
+          <meta>
+            <instanceID/>
+          </meta>
+        </scto.samplecascading.v1>
+      </instance>
+      <instance id="yesno">
+        <root>
+          <item>
+            <itextId>static_instance-yesno-0</itextId>
+            <name>1</name>
+          </item>
+          <item>
+            <itextId>static_instance-yesno-1</itextId>
+            <name>0</name>
+          </item>
+        </root>
+      </instance>
+      <instance id="region">
+        <root>
+          <item>
+            <itextId>static_instance-region-0</itextId>
+            <name>AF</name>
+          </item>
+          <item>
+            <itextId>static_instance-region-1</itextId>
+            <name>SA</name>
+          </item>
+        </root>
+      </instance>
+      <instance id="country">
+        <root>
+          <item>
+            <itextId>static_instance-country-0</itextId>
+            <filter>AF</filter>
+            <name>ZW</name>
+          </item>
+          <item>
+            <itextId>static_instance-country-1</itextId>
+            <filter>AF</filter>
+            <name>ZA</name>
+          </item>
+          <item>
+            <itextId>static_instance-country-2</itextId>
+            <filter>SA</filter>
+            <name>IN</name>
+          </item>
+          <item>
+            <itextId>static_instance-country-3</itextId>
+            <filter>SA</filter>
+            <name>BD</name>
+          </item>
+        </root>
+      </instance>
+      <instance id="city">
+        <root>
+          <item>
+            <itextId>static_instance-city-0</itextId>
+            <filter>ZW</filter>
+            <name>Harare</name>
+          </item>
+          <item>
+            <itextId>static_instance-city-1</itextId>
+            <filter>ZW</filter>
+            <name>Bulawayo</name>
+          </item>
+          <item>
+            <itextId>static_instance-city-2</itextId>
+            <filter>ZA</filter>
+            <name>Pretoria</name>
+          </item>
+          <item>
+            <itextId>static_instance-city-3</itextId>
+            <filter>ZA</filter>
+            <name>Cape_Town</name>
+          </item>
+          <item>
+            <itextId>static_instance-city-4</itextId>
+            <filter>IN</filter>
+            <name>New_Delhi</name>
+          </item>
+          <item>
+            <itextId>static_instance-city-5</itextId>
+            <filter>IN</filter>
+            <name>Chennai</name>
+          </item>
+          <item>
+            <itextId>static_instance-city-6</itextId>
+            <filter>BD</filter>
+            <name>Dhaka</name>
+          </item>
+          <item>
+            <itextId>static_instance-city-7</itextId>
+            <filter>BD</filter>
+            <name>Chittagong</name>
+          </item>
+        </root>
+      </instance>
+      <bind jr:preload="timestamp" jr:preloadParams="start" nodeset="/scto.samplecascading.v1/starttime" type="dateTime"/>
+      <bind jr:preload="timestamp" jr:preloadParams="end" nodeset="/scto.samplecascading.v1/endtime" type="dateTime"/>
+      <bind jr:preload="property" jr:preloadParams="deviceid" nodeset="/scto.samplecascading.v1/deviceid" type="string"/>
+      <bind jr:preload="property" jr:preloadParams="phonenumber" nodeset="/scto.samplecascading.v1/devicephonenum" type="string"/>
+      <bind calculate="device-info()" nodeset="/scto.samplecascading.v1/device_info" type="string"/>
+      <bind calculate="duration()" nodeset="/scto.samplecascading.v1/duration" type="string"/>
+      <bind nodeset="/scto.samplecascading.v1/intronote" original="note" readonly="true()" type="string"/>
+      <bind nodeset="/scto.samplecascading.v1/consent" required="true()" type="select1"/>
+      <bind nodeset="/scto.samplecascading.v1/survey_region" relevant=" /scto.samplecascading.v1/consent =1" required="true()" type="select1"/>
+      <bind nodeset="/scto.samplecascading.v1/survey_country" relevant=" /scto.samplecascading.v1/consent =1" required="true()" type="select1"/>
+      <bind nodeset="/scto.samplecascading.v1/survey_city" relevant=" /scto.samplecascading.v1/consent =1" required="true()" type="select1"/>
+      <bind nodeset="/scto.samplecascading.v1/name" relevant=" /scto.samplecascading.v1/consent =1" required="true()" type="string"/>
+      <bind constraint=".&gt;3 and .&lt;130" jr:constraintMsg="Please enter a valid age to continue." nodeset="/scto.samplecascading.v1/age" relevant=" /scto.samplecascading.v1/consent =1" required="true()" type="int"/>
+      <bind nodeset="/scto.samplecascading.v1/confirmnote" original="note" readonly="true()" relevant=" /scto.samplecascading.v1/consent =1" type="string"/>
+      <bind calculate="concat('uuid:', uuid())" nodeset="/scto.samplecascading.v1/meta/instanceID" readonly="true()" type="string"/>
+    </model>
+  </h:head>
+  <h:body>
+    <input appearance="intro" ref="/scto.samplecascading.v1/intronote">
+      <label>Welcome to the sample cascading-select form. Please swipe forward to continue.</label>
+    </input>
+    <select1 ref="/scto.samplecascading.v1/consent">
+      <label>Would you like to continue?</label>
+      <item>
+        <label>Yes</label>
+        <value>1</value>
+      </item>
+      <item>
+        <label>No</label>
+        <value>0</value>
+      </item>
+    </select1>
+    <select1 ref="/scto.samplecascading.v1/survey_region">
+      <label>In which region are you filling out this survey?</label>
+      <item>
+        <label>Africa</label>
+        <value>AF</value>
+      </item>
+      <item>
+        <label>South Asia</label>
+        <value>SA</value>
+      </item>
+    </select1>
+    <select1 ref="/scto.samplecascading.v1/survey_country">
+      <label>In which country?</label>
+      <itemset nodeset="instance('country')/root/item[filter= /scto.samplecascading.v1/survey_region ]">
+        <value ref="name"/>
+        <label ref="jr:itext(itextId)"/>
+      </itemset>
+    </select1>
+    <select1 ref="/scto.samplecascading.v1/survey_city">
+      <label>In which city?</label>
+      <itemset nodeset="instance('city')/root/item[filter= /scto.samplecascading.v1/survey_country ]">
+        <value ref="name"/>
+        <label ref="jr:itext(itextId)"/>
+      </itemset>
+    </select1>
+    <input ref="/scto.samplecascading.v1/name">
+      <label>What is your name?</label>
+    </input>
+    <input ref="/scto.samplecascading.v1/age">
+      <label>How old are you?</label>
+    </input>
+    <input ref="/scto.samplecascading.v1/confirmnote">
+      <label>Your name is <output value=" /scto.samplecascading.v1/name "/> and your age is <output value=" /scto.samplecascading.v1/age "/>. Thank you.</label>
+    </input>
+  </h:body>
+</h:html>

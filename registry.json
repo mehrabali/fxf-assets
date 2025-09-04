@@ -1,39 +1,170 @@
-{
-  "templates": [
-    {
-      "id": "odk.template.base-odk.v1",
-      "path": "templates/odk/base_v1.xlsx",
-      "platform": "odk",
-      "title": "Base (ODK)",
-      "description": ""
-    },
-    {
-      "id": "odk.template.household-odk.v1",
-      "path": "templates/odk/household_v1.xlsx",
-      "platform": "odk",
-      "title": "Household (ODK)",
-      "description": ""
-    },
-    {
-      "id": "surveycto.template.base-surveycto.v1",
-      "path": "templates/surveycto/base_v1.xlsx",
-      "platform": "surveycto",
-      "title": "Base (SurveyCTO)",
-      "description": ""
-    }
-  ],
-  "blocks": [
-    {
-      "id": "surveycto.patterns.xml.v1",
-      "path": "blocks/surveycto/patterns/xml",
-      "platform": "surveycto",
-      "title": "xml"
-    },
-    {
-      "id": "surveycto.patterns.xml.v1",
-      "path": "blocks/surveycto/patterns/xml",
-      "platform": "surveycto",
-      "title": "xml"
-    }
-  ]
-}
+[
+  {
+    "platform": "odk",
+    "xlsx_file_name": "shelter_material_survey",
+    "xml_file_name": "shelter_material_survey",
+    "id": "odk.shelter_material_survey.v1",
+    "description": "This form is meant for household visits with questions on inhabitants and building characteristics and materials.",
+    "remarks": null
+  },
+  {
+    "platform": "odk",
+    "xlsx_file_name": "monthly_project_report",
+    "xml_file_name": "monthly_project_report",
+    "id": "odk.monthly_project_report.v1",
+    "description": "This form is meant for a monthly report on the performance of various micro-projects (e.g., banana growing, rabbit rearing, peanut processing, etc.) within a community and the benefits in income and living amongst the community members.",
+    "remarks": "This form has issues in the choice list. \nxlsx form is ok, xml form couldnt download.\nError: Error: [row : 84] On the 'choices' sheet, the 'name' value is invalid. Choice names must be unique for each choice list. If this is intentional, use the setting 'allow_choice_duplicates'. Learn more: https://xlsform.org/#choice-names."
+  },
+  {
+    "platform": "odk",
+    "xlsx_file_name": "baseline_household_survey",
+    "xml_file_name": "baseline_household_survey",
+    "id": "odk.baseline_household_survey.v1",
+    "description": "Conduct a baseline survey of all households in an area, recording the GPS location of the household and relevant information on each household member. This form is best used with ODK Collect; repeat count and indexed-repeat functions are not supported in Enketo.",
+    "remarks": null
+  },
+  {
+    "platform": "odk",
+    "xlsx_file_name": "anc_visit",
+    "xml_file_name": "anc_visit",
+    "id": "odk.ANC_Visitodk.anc_visit.v1",
+    "description": "This form records a pregnant woman’s health information and vitals during routine antenatal care (ANC) visits.",
+    "remarks": null
+  },
+  {
+    "platform": "odk",
+    "xlsx_file_name": "fatal_injury_surveillance_form",
+    "xml_file_name": "fatal_injury_surveillance_form",
+    "id": "odk.fatal_injury_surveillance_form.v1",
+    "description": "This form is an adaptation of the WHO fatal injury reporting form.",
+    "remarks": null
+  },
+  {
+    "platform": "odk",
+    "xlsx_file_name": "spraying_survey",
+    "xml_file_name": "spraying_survey",
+    "id": "odk.spraying_survey.v1",
+    "description": "This form is used to record coverage of insecticide spraying for malaria prevention.",
+    "remarks": null
+  },
+  {
+    "platform": "odk",
+    "xlsx_file_name": "water_usage_practices\n",
+    "xml_file_name": "water_usage_practices\n",
+    "id": "odk.water_usage_practices.v1\n",
+    "description": "This form is used to survey water usage and practices at the household level.",
+    "remarks": null
+  },
+  {
+    "platform": "odk",
+    "xlsx_file_name": "Calculation example",
+    "xml_file_name": "Calculation example",
+    "id": "odk.calc_example.v1",
+    "description": "A form demonstrating the answer from the addition of previous responses",
+    "remarks": null
+  },
+  {
+    "platform": "odk",
+    "xlsx_file_name": "calc_if_loop",
+    "xml_file_name": "calc_if_loop",
+    "id": "odk.calc_if_loop.v1",
+    "description": "A form demonstrating the If function in a form",
+    "remarks": null
+  },
+  {
+    "platform": "odk",
+    "xlsx_file_name": "repeat_count",
+    "xml_file_name": "repeat_count",
+    "id": "odk.repeat_count.v1",
+    "description": "A form demonstrating the repeat count in a group",
+    "remarks": null
+  },
+  {
+    "platform": "odk",
+    "xlsx_file_name": "date_time_calc",
+    "xml_file_name": "date_time_calc",
+    "id": "odk.date_time_calc.v1",
+    "description": "A form showing how to calculate the date and time in a form",
+    "remarks": null
+  },
+  {
+    "platform": "scto",
+    "xlsx_file_name": "Sample-Random.xlsx",
+    "xml_file_name": "Sample-Random.xml",
+    "id": "scto.samplerandom.v1",
+    "description": "Randomization: Randomizing form elements: This sample form demonstrates how to use randomization in SurveyCTO to vary both question wording and answer choice order. It employs two independent random draws: one to randomly display either “Do you like the color blue?” or “Do you truly love the color blue?” and another to control phrasing of a similar question about the color red, ensuring the variations are chosen independently. For all multiple-choice questions, the randomized appearance shuffles the order of response options, while in the favorite color question the randomized(0, 1) appearance ensures that the “Other” option always remains at the bottom of the list. Finally, a text audit field with the choices appearance records additional metadata, such as the exact order of choices shown and the timing of responses, allowing detailed review of how the survey was administered.",
+    "remarks": null
+  },
+  {
+    "platform": "scto",
+    "xlsx_file_name": "Sample-Images.xlsx",
+    "xml_file_name": "Sample-Images.xml",
+    "id": "scto.sampleimages.v1",
+    "description": "Images: Adding pictures and other graphics: This sample form illustrates how to include images in SurveyCTO questions and answer choices. The form package consists of an XLSForm plus referenced image files that must be uploaded together. The first question is a simple text input field that displays the SurveyCTO logo by referencing the image filename in the media:image column. A subsequent multiple-choice question demonstrates how images can be attached to response options: the choice list of animals includes “Elephant” and “Tiger,” each with an associated image file. As a result, respondents not only see the text labels but also the corresponding pictures when answering. This setup showcases how images can be used to enhance the clarity and engagement of survey forms.",
+    "remarks": "Attachment included"
+  },
+  {
+    "platform": "scto",
+    "xlsx_file_name": "Sample-FieldLists.xlsx",
+    "xml_file_name": "Sample-FieldLists.xml",
+    "id": "scto.samplefieldlists.v1",
+    "description": "Field lists: Multiple questions on a single screen:  This sample form demonstrates how to use field lists in SurveyCTO to display multiple questions on a single screen. Questions are grouped using begin group and end group rows, with the field-list appearance applied to ensure they appear together. The first group, “Basic respondent details,” shows a text field for the respondent’s name and a region selection question, where the minimal appearance renders the choices as a drop-down menu. The second group, “Household assets,” displays a set of yes/no multiple-choice questions in a table format by using label for the first question and list-nolabel for subsequent ones. This approach improves usability by consolidating related questions and making surveys quicker and more intuitive to complete.",
+    "remarks": null
+  },
+  {
+    "platform": "scto",
+    "xlsx_file_name": "Sample-CascadingSelects.xlsx",
+    "xml_file_name": "Sample-CascadingSelects.xml",
+    "id": "scto.samplecascading.v1",
+    "description": "Cascading selects: Filtering multiple-choice option lists: This sample form demonstrates how to use cascading selects in SurveyCTO to dynamically filter multiple-choice options based on earlier responses. The form contains three linked select_one questions: region, country, and city. Filtering is controlled through the choice_filter column in the survey sheet, which references a filter column in the choices sheet. For example, the country question applies the filter ${survey_region}, so only countries associated with the selected region are displayed; likewise, the city question filters options based on the chosen country. As a result, if a respondent selects South Asia as the region, only South Asian countries appear in the next question, and if they then select Bangladesh, only Bangladeshi cities are shown. Similarly, choosing Africa narrows options to African countries and their respective cities. This structure ensures cleaner forms, reduces user error, and creates a smoother survey experience by displaying only relevant options.",
+    "remarks": null
+  },
+  {
+    "platform": "scto",
+    "xlsx_file_name": "Sample-Rosters.xlsx",
+    "xml_file_name": "Sample-Rosters.xml",
+    "id": "scto.samplerosters.v1",
+    "description": "Rosters: Two methods for repeated questions: This sample form illustrates two methods for collecting household roster data in SurveyCTO, where the same questions are asked for multiple family members. Respondents first choose whether to use a repeating group. If they select “No”, the form asks for the total number of household members and then displays a fixed series of fields, repeating questions (like name and gender) only as many times as needed based on that number. If they select “Yes”, the form instead uses a repeat group, which prompts for each household member’s details (name, gender, age) and continues looping until the user chooses to stop. Both methods capture the same type of information but produce different user experiences and data structures: the fixed method creates neatly aligned columns in exported data, while the repeat group offers flexibility for households of varying sizes without requiring predefined fields.",
+    "remarks": null
+  },
+  {
+    "platform": "scto",
+    "xlsx_file_name": "Sample-Rosters-RepeatCount.xlsx",
+    "xml_file_name": "Sample-Rosters-RepeatCount.xml",
+    "id": "scto.samplerostersrc.v1",
+    "description": "Rosters: A third, hybrid method for repeated questions (repeat_count): This sample form demonstrates a hybrid method for rosters in SurveyCTO that combines the advantages of both fixed fields and open-ended repeating groups. First, the respondent is asked to enter the total number of family members. Then, using the repeat_count column in the begin repeat row, the form automatically repeats the household member questions exactly that number of times. This ensures that all household members are covered without requiring the survey designer to predefine a fixed number of fields, while also avoiding the indefinite looping of a standard repeat group. It provides a structured yet flexible way to collect roster data, aligning the number of repetitions directly with the respondent’s input.",
+    "remarks": null
+  },
+  {
+    "platform": "scto",
+    "xlsx_file_name": "Sample-Rosters-Choice1.xlsx",
+    "xml_file_name": "Sample-Rosters-Choice1.xml",
+    "id": "scto.samplerostersc1.v1",
+    "description": "Rosters: Choosing among earlier entries: This sample form shows two variations on how to let respondents choose among earlier household entries when filling out a roster in SurveyCTO. In both versions, the names of household members entered earlier are reused as labels for a multiple-choice question, so the respondent can, for example, select which member works. A filter column in the choices sheet ensures that only as many names as were provided appear in the list, avoiding blanks. The key difference lies in how the household names are captured: Variation 1 collects them in a fixed set of fields (fam_name1, fam_name2, etc.), while Variation 2 collects them in a repeat group and then extracts each name into separate calculate fields using the indexed-repeat() function. Both approaches achieve the same result, but the second method is more flexible for handling repeat groups while still allowing names to be referenced in later choice lists.",
+    "remarks": null
+  },
+  {
+    "platform": "scto",
+    "xlsx_file_name": "Sample-Rosters-MultipleRepeats.xlsx",
+    "xml_file_name": "Sample-Rosters-MultipleRepeats.xml",
+    "id": "scto.samplerostersmr.v1",
+    "description": "Rosters: Collecting repeated information with multiple repeats: This sample form demonstrates how to collect repeated information across multiple repeat groups in SurveyCTO, ensuring that later questions can reference earlier responses. The first repeat group gathers household member names, using the index() function to number each entry (e.g., “What is the name of household member #1?”). Once the respondent finishes entering names, a second repeat group follows to collect ages, with its repeat_count set by count(${names}) so that it repeats the same number of times as the earlier names group. Within this second group, the indexed-repeat() function is used to pull in the names previously entered, allowing questions like “How old is [Name]?” to be dynamically personalized. This setup ensures a one-to-one link between each household member’s name and age, providing a clean, structured roster. A more advanced version of the sample nests repeat groups three levels deep (e.g., families → household members → pets), showcasing how this method can be extended to more complex hierarchical data such as agricultural plots and crops.",
+    "remarks": null
+  },
+  {
+    "platform": "scto",
+    "xlsx_file_name": "Sample-Preloading.xlsx",
+    "xml_file_name": "Sample-Preloading.xlsx.xml",
+    "id": "scto.samplepreload.v1",
+    "description": "Pre-loading: Referencing pre-loaded .csv data: This sample form demonstrates pre-loading data from a .csv file in SurveyCTO to streamline survey entry. The accompanying .csv file contains household-level data, including the number of agricultural plots and plot descriptions, with a key column (hhid_key) uniquely identifying each household. When filling out the form, respondents first enter and confirm their household ID. Hidden calculate fields then use the pulldata() function to retrieve relevant data from the .csv file, such as the number of plots and plot descriptions. These pre-loaded values are used in subsequent visible questions, ensuring that respondents only answer questions relevant to their household. For example, a question asks the respondent to select their best-performing plot, with available choices filtered to the number of plots they own, and follow-up questions about cultivation are only shown if the household owns one or more plots. This approach reduces data entry errors, tailors the survey experience, and efficiently incorporates existing data into the form.",
+    "remarks": "Attachment included"
+  },
+  {
+    "platform": "scto",
+    "xlsx_file_name": "Sample-SearchAndSelect.xlsx",
+    "xml_file_name": "Sample-SearchAndSelect.xml",
+    "id": "scto.samplepreloadsns.v1",
+    "description": "Pre-loading: Searching and selecting from pre-loaded data: This sample form demonstrates pre-loading data with searchable and selectable options in SurveyCTO. Unlike the previous pre-loading example, respondents can now select a household from a pre-loaded .csv file rather than manually entering the ID. The survey first prompts users to choose a selection method and then guides them through a hierarchy of selections—region, district, village, and finally household—using the search() function in the appearance column. Filters ensure that each subsequent choice only shows relevant options based on earlier selections. Alternatively, if users choose to search for a household, they can specify a search type (e.g., contains, matches) and text, and then select from the resulting households. To unify downstream logic, a calculate field uses the if() function to store the selected household ID from either method into a single variable, ensuring that later questions can reference it consistently. This approach combines pre-loaded data with dynamic searching and filtering, making it easier to locate and select the correct household.",
+    "remarks": "Attachment included"
+  }
+]

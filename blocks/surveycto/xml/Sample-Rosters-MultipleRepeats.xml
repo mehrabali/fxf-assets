@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa" xmlns:odk="http://www.opendatakit.org/xforms" xmlns:orx="http://openrosa.org/xforms/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <h:head>
+    <h:title>Sample Form - Rosters - Multiple repeats</h:title>
+    <model>
+      <instance>
+        <scto.samplerostersmr.v1 id="scto.samplerostersmr.v1" version="2509041637">
+          <starttime/>
+          <endtime/>
+          <deviceid/>
+          <devicephonenum/>
+          <device_info/>
+          <duration/>
+          <intronote/>
+          <consent/>
+          <consented>
+            <names jr:template="">
+              <namenumber/>
+              <name/>
+            </names>
+            <ages_count/>
+            <ages jr:template="">
+              <namefromearlier/>
+              <age/>
+            </ages>
+          </consented>
+          <meta>
+            <instanceID/>
+          </meta>
+        </scto.samplerostersmr.v1>
+      </instance>
+      <bind jr:preload="timestamp" jr:preloadParams="start" nodeset="/scto.samplerostersmr.v1/starttime" type="dateTime"/>
+      <bind jr:preload="timestamp" jr:preloadParams="end" nodeset="/scto.samplerostersmr.v1/endtime" type="dateTime"/>
+      <bind jr:preload="property" jr:preloadParams="deviceid" nodeset="/scto.samplerostersmr.v1/deviceid" type="string"/>
+      <bind jr:preload="property" jr:preloadParams="phonenumber" nodeset="/scto.samplerostersmr.v1/devicephonenum" type="string"/>
+      <bind calculate="device-info()" nodeset="/scto.samplerostersmr.v1/device_info" type="string"/>
+      <bind calculate="duration()" nodeset="/scto.samplerostersmr.v1/duration" type="string"/>
+      <bind nodeset="/scto.samplerostersmr.v1/intronote" original="note" readonly="true()" type="string"/>
+      <bind nodeset="/scto.samplerostersmr.v1/consent" required="true()" type="select1"/>
+      <bind nodeset="/scto.samplerostersmr.v1/consented" relevant=" /scto.samplerostersmr.v1/consent =1"/>
+      <bind calculate="index()" nodeset="/scto.samplerostersmr.v1/consented/names/namenumber" type="string"/>
+      <bind nodeset="/scto.samplerostersmr.v1/consented/names/name" required="true()" type="string"/>
+      <bind calculate="count( /scto.samplerostersmr.v1/consented/names )" nodeset="/scto.samplerostersmr.v1/consented/ages_count" readonly="true()" type="string"/>
+      <bind calculate="indexed-repeat( /scto.samplerostersmr.v1/consented/names/name ,  /scto.samplerostersmr.v1/consented/names , index())" nodeset="/scto.samplerostersmr.v1/consented/ages/namefromearlier" type="string"/>
+      <bind constraint=".&gt;3 and .&lt;130" jr:constraintMsg="Please enter a valid age to continue." nodeset="/scto.samplerostersmr.v1/consented/ages/age" required="true()" type="int"/>
+      <bind calculate="concat('uuid:', uuid())" nodeset="/scto.samplerostersmr.v1/meta/instanceID" readonly="true()" type="string"/>
+    </model>
+  </h:head>
+  <h:body>
+    <input appearance="intro" ref="/scto.samplerostersmr.v1/intronote">
+      <label>Welcome to the sample rosters form (multiple-repeat variation). Please swipe forward to continue.</label>
+    </input>
+    <select1 ref="/scto.samplerostersmr.v1/consent">
+      <label>Would you like to continue?</label>
+      <item>
+        <label>Yes</label>
+        <value>1</value>
+      </item>
+      <item>
+        <label>No</label>
+        <value>0</value>
+      </item>
+    </select1>
+    <group appearance="organized" ref="/scto.samplerostersmr.v1/consented">
+      <label>Sample survey module</label>
+      <group ref="/scto.samplerostersmr.v1/consented/names">
+        <label>HH member names</label>
+        <repeat nodeset="/scto.samplerostersmr.v1/consented/names">
+          <input ref="/scto.samplerostersmr.v1/consented/names/name">
+            <label>What is the name of household member #<output value=" /scto.samplerostersmr.v1/consented/names/namenumber "/>?</label>
+          </input>
+        </repeat>
+      </group>
+      <group ref="/scto.samplerostersmr.v1/consented/ages">
+        <label>HH member ages</label>
+        <repeat jr:count=" /scto.samplerostersmr.v1/consented/ages_count " nodeset="/scto.samplerostersmr.v1/consented/ages">
+          <input ref="/scto.samplerostersmr.v1/consented/ages/age">
+            <label>How old is <output value=" /scto.samplerostersmr.v1/consented/ages/namefromearlier "/>?</label>
+          </input>
+        </repeat>
+      </group>
+    </group>
+  </h:body>
+</h:html>

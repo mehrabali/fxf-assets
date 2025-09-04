@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa" xmlns:odk="http://www.opendatakit.org/xforms" xmlns:orx="http://openrosa.org/xforms/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <h:head>
+    <h:title>Sample Form - Field lists</h:title>
+    <model>
+      <instance>
+        <scto.samplefieldlists.v1 id="scto.samplefieldlists.v1" version="2509041607">
+          <starttime/>
+          <endtime/>
+          <deviceid/>
+          <devicephonenum/>
+          <device_info/>
+          <duration/>
+          <page1>
+            <name/>
+            <hh_region/>
+          </page1>
+          <page2>
+            <labels/>
+            <has_radio/>
+            <has_tv/>
+            <has_motorbike/>
+            <has_car/>
+          </page2>
+          <meta>
+            <instanceID/>
+          </meta>
+        </scto.samplefieldlists.v1>
+      </instance>
+      <bind jr:preload="timestamp" jr:preloadParams="start" nodeset="/scto.samplefieldlists.v1/starttime" type="dateTime"/>
+      <bind jr:preload="timestamp" jr:preloadParams="end" nodeset="/scto.samplefieldlists.v1/endtime" type="dateTime"/>
+      <bind jr:preload="property" jr:preloadParams="deviceid" nodeset="/scto.samplefieldlists.v1/deviceid" type="string"/>
+      <bind jr:preload="property" jr:preloadParams="phonenumber" nodeset="/scto.samplefieldlists.v1/devicephonenum" type="string"/>
+      <bind calculate="device-info()" nodeset="/scto.samplefieldlists.v1/device_info" type="string"/>
+      <bind calculate="duration()" nodeset="/scto.samplefieldlists.v1/duration" type="string"/>
+      <bind nodeset="/scto.samplefieldlists.v1/page1/name" required="true()" type="string"/>
+      <bind nodeset="/scto.samplefieldlists.v1/page1/hh_region" type="select1"/>
+      <bind nodeset="/scto.samplefieldlists.v1/page2/labels" type="select1"/>
+      <bind nodeset="/scto.samplefieldlists.v1/page2/has_radio" type="select1"/>
+      <bind nodeset="/scto.samplefieldlists.v1/page2/has_tv" type="select1"/>
+      <bind nodeset="/scto.samplefieldlists.v1/page2/has_motorbike" type="select1"/>
+      <bind nodeset="/scto.samplefieldlists.v1/page2/has_car" type="select1"/>
+      <bind calculate="concat('uuid:', uuid())" nodeset="/scto.samplefieldlists.v1/meta/instanceID" readonly="true()" type="string"/>
+    </model>
+  </h:head>
+  <h:body>
+    <group appearance="field-list" ref="/scto.samplefieldlists.v1/page1">
+      <label>Basic respondent details</label>
+      <input ref="/scto.samplefieldlists.v1/page1/name">
+        <label>What is your name?</label>
+      </input>
+      <select1 appearance="minimal" ref="/scto.samplefieldlists.v1/page1/hh_region">
+        <label>Which region are you in?</label>
+        <item>
+          <label>Africa</label>
+          <value>1</value>
+        </item>
+        <item>
+          <label>South Asia</label>
+          <value>2</value>
+        </item>
+      </select1>
+    </group>
+    <group appearance="field-list" ref="/scto.samplefieldlists.v1/page2">
+      <label>Household assets</label>
+      <select1 appearance="label" ref="/scto.samplefieldlists.v1/page2/labels">
+        <label>HH has a..?</label>
+        <item>
+          <label>Yes</label>
+          <value>1</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>0</value>
+        </item>
+      </select1>
+      <select1 appearance="list-nolabel" ref="/scto.samplefieldlists.v1/page2/has_radio">
+        <label>Radio?</label>
+        <item>
+          <label>Yes</label>
+          <value>1</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>0</value>
+        </item>
+      </select1>
+      <select1 appearance="list-nolabel" ref="/scto.samplefieldlists.v1/page2/has_tv">
+        <label>TV?</label>
+        <item>
+          <label>Yes</label>
+          <value>1</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>0</value>
+        </item>
+      </select1>
+      <select1 appearance="list-nolabel" ref="/scto.samplefieldlists.v1/page2/has_motorbike">
+        <label>Motorbike?</label>
+        <item>
+          <label>Yes</label>
+          <value>1</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>0</value>
+        </item>
+      </select1>
+      <select1 appearance="list-nolabel" ref="/scto.samplefieldlists.v1/page2/has_car">
+        <label>Car?</label>
+        <item>
+          <label>Yes</label>
+          <value>1</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>0</value>
+        </item>
+      </select1>
+    </group>
+  </h:body>
+</h:html>

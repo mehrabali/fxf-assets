@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa" xmlns:odk="http://www.opendatakit.org/xforms" xmlns:orx="http://openrosa.org/xforms/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <h:head>
+    <h:title>Sample Form - Images</h:title>
+    <model>
+      <itext>
+        <translation default="true()" lang="english">
+          <text id="/scto.sampleimages.v1/anytext:label">
+            <value>Please enter some text here (any text).</value>
+            <value form="image">jr://images/Sample-Images-Logo.png</value>
+          </text>
+          <text id="/scto.sampleimages.v1/animal/1:label">
+            <value>Elephant</value>
+            <value form="image">jr://images/Sample-Images-Elephant.jpg</value>
+          </text>
+          <text id="/scto.sampleimages.v1/animal/2:label">
+            <value>Tiger</value>
+            <value form="image">jr://images/Sample-Images-Tiger.jpg</value>
+          </text>
+        </translation>
+      </itext>
+      <instance>
+        <scto.sampleimages.v1 id="scto.sampleimages.v1" version="2509041559">
+          <starttime/>
+          <endtime/>
+          <deviceid/>
+          <devicephonenum/>
+          <device_info/>
+          <duration/>
+          <anytext/>
+          <animal/>
+          <meta>
+            <instanceID/>
+          </meta>
+        </scto.sampleimages.v1>
+      </instance>
+      <bind jr:preload="timestamp" jr:preloadParams="start" nodeset="/scto.sampleimages.v1/starttime" type="dateTime"/>
+      <bind jr:preload="timestamp" jr:preloadParams="end" nodeset="/scto.sampleimages.v1/endtime" type="dateTime"/>
+      <bind jr:preload="property" jr:preloadParams="deviceid" nodeset="/scto.sampleimages.v1/deviceid" type="string"/>
+      <bind jr:preload="property" jr:preloadParams="phonenumber" nodeset="/scto.sampleimages.v1/devicephonenum" type="string"/>
+      <bind calculate="device-info()" nodeset="/scto.sampleimages.v1/device_info" type="string"/>
+      <bind calculate="duration()" nodeset="/scto.sampleimages.v1/duration" type="string"/>
+      <bind nodeset="/scto.sampleimages.v1/anytext" required="true()" type="string"/>
+      <bind nodeset="/scto.sampleimages.v1/animal" required="true()" type="select1"/>
+      <bind calculate="concat('uuid:', uuid())" nodeset="/scto.sampleimages.v1/meta/instanceID" readonly="true()" type="string"/>
+    </model>
+  </h:head>
+  <h:body>
+    <input ref="/scto.sampleimages.v1/anytext">
+      <label ref="jr:itext('/scto.sampleimages.v1/anytext:label')"/>
+    </input>
+    <select1 ref="/scto.sampleimages.v1/animal">
+      <label>What is your favorite animal?</label>
+      <item>
+        <label ref="jr:itext('/scto.sampleimages.v1/animal/1:label')"/>
+        <value>1</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/scto.sampleimages.v1/animal/2:label')"/>
+        <value>2</value>
+      </item>
+    </select1>
+  </h:body>
+</h:html>

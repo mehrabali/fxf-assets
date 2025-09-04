@@ -1,0 +1,233 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa" xmlns:odk="http://www.opendatakit.org/xforms" xmlns:orx="http://openrosa.org/xforms/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <h:head>
+    <h:title>Sample Form - Rosters</h:title>
+    <model>
+      <instance>
+        <scto.samplerosters.v1 id="scto.samplerosters.v1" version="2509041619">
+          <starttime/>
+          <endtime/>
+          <deviceid/>
+          <devicephonenum/>
+          <device_info/>
+          <duration/>
+          <intronote/>
+          <consent/>
+          <confirmnote/>
+          <userepeat/>
+          <numfamily/>
+          <fam_name1/>
+          <fam_name2/>
+          <fam_name3/>
+          <fam_name4/>
+          <fam_name5/>
+          <rosterpart2note/>
+          <fam_gender1/>
+          <fam_age1/>
+          <fam_gender2/>
+          <fam_age2/>
+          <fam_gender3/>
+          <fam_age3/>
+          <fam_gender4/>
+          <fam_age4/>
+          <fam_gender5/>
+          <fam_age5/>
+          <repeatintro/>
+          <fam_group jr:template="">
+            <fam_rg_name/>
+            <fam_rg_gender/>
+            <fam_rg_age/>
+          </fam_group>
+          <conclusion/>
+          <meta>
+            <instanceID/>
+          </meta>
+        </scto.samplerosters.v1>
+      </instance>
+      <bind jr:preload="timestamp" jr:preloadParams="start" nodeset="/scto.samplerosters.v1/starttime" type="dateTime"/>
+      <bind jr:preload="timestamp" jr:preloadParams="end" nodeset="/scto.samplerosters.v1/endtime" type="dateTime"/>
+      <bind jr:preload="property" jr:preloadParams="deviceid" nodeset="/scto.samplerosters.v1/deviceid" type="string"/>
+      <bind jr:preload="property" jr:preloadParams="phonenumber" nodeset="/scto.samplerosters.v1/devicephonenum" type="string"/>
+      <bind calculate="device-info()" nodeset="/scto.samplerosters.v1/device_info" type="string"/>
+      <bind calculate="duration()" nodeset="/scto.samplerosters.v1/duration" type="string"/>
+      <bind nodeset="/scto.samplerosters.v1/intronote" original="note" readonly="true()" type="string"/>
+      <bind nodeset="/scto.samplerosters.v1/consent" required="true()" type="select1"/>
+      <bind nodeset="/scto.samplerosters.v1/confirmnote" original="note" readonly="true()" relevant=" /scto.samplerosters.v1/consent =1" type="string"/>
+      <bind nodeset="/scto.samplerosters.v1/userepeat" relevant=" /scto.samplerosters.v1/consent =1" required="true()" type="select1"/>
+      <bind constraint=".&gt;=0 and .&lt;=5" jr:constraintMsg="Please enter a number between 0 and 5." nodeset="/scto.samplerosters.v1/numfamily" relevant=" /scto.samplerosters.v1/consent =1 and  /scto.samplerosters.v1/userepeat =0" required="true()" type="int"/>
+      <bind nodeset="/scto.samplerosters.v1/fam_name1" relevant=" /scto.samplerosters.v1/consent =1 and  /scto.samplerosters.v1/userepeat =0 and  /scto.samplerosters.v1/numfamily &gt;=1" required="true()" type="string"/>
+      <bind nodeset="/scto.samplerosters.v1/fam_name2" relevant=" /scto.samplerosters.v1/consent =1 and  /scto.samplerosters.v1/userepeat =0 and  /scto.samplerosters.v1/numfamily &gt;=2" required="true()" type="string"/>
+      <bind nodeset="/scto.samplerosters.v1/fam_name3" relevant=" /scto.samplerosters.v1/consent =1 and  /scto.samplerosters.v1/userepeat =0 and  /scto.samplerosters.v1/numfamily &gt;=3" required="true()" type="string"/>
+      <bind nodeset="/scto.samplerosters.v1/fam_name4" relevant=" /scto.samplerosters.v1/consent =1 and  /scto.samplerosters.v1/userepeat =0 and  /scto.samplerosters.v1/numfamily &gt;=4" required="true()" type="string"/>
+      <bind nodeset="/scto.samplerosters.v1/fam_name5" relevant=" /scto.samplerosters.v1/consent =1 and  /scto.samplerosters.v1/userepeat =0 and  /scto.samplerosters.v1/numfamily &gt;=5" required="true()" type="string"/>
+      <bind nodeset="/scto.samplerosters.v1/rosterpart2note" original="note" readonly="true()" relevant=" /scto.samplerosters.v1/consent =1 and  /scto.samplerosters.v1/userepeat =0" type="string"/>
+      <bind nodeset="/scto.samplerosters.v1/fam_gender1" relevant=" /scto.samplerosters.v1/consent =1 and  /scto.samplerosters.v1/userepeat =0 and  /scto.samplerosters.v1/numfamily &gt;=1" required="true()" type="select1"/>
+      <bind nodeset="/scto.samplerosters.v1/fam_age1" relevant=" /scto.samplerosters.v1/consent =1 and  /scto.samplerosters.v1/userepeat =0 and  /scto.samplerosters.v1/numfamily &gt;=1" required="true()" type="int"/>
+      <bind nodeset="/scto.samplerosters.v1/fam_gender2" relevant=" /scto.samplerosters.v1/consent =1 and  /scto.samplerosters.v1/userepeat =0 and  /scto.samplerosters.v1/numfamily &gt;=2" required="true()" type="select1"/>
+      <bind nodeset="/scto.samplerosters.v1/fam_age2" relevant=" /scto.samplerosters.v1/consent =1 and  /scto.samplerosters.v1/userepeat =0 and  /scto.samplerosters.v1/numfamily &gt;=2" required="true()" type="int"/>
+      <bind nodeset="/scto.samplerosters.v1/fam_gender3" relevant=" /scto.samplerosters.v1/consent =1 and  /scto.samplerosters.v1/userepeat =0 and  /scto.samplerosters.v1/numfamily &gt;=3" required="true()" type="select1"/>
+      <bind nodeset="/scto.samplerosters.v1/fam_age3" relevant=" /scto.samplerosters.v1/consent =1 and  /scto.samplerosters.v1/userepeat =0 and  /scto.samplerosters.v1/numfamily &gt;=3" required="true()" type="int"/>
+      <bind nodeset="/scto.samplerosters.v1/fam_gender4" relevant=" /scto.samplerosters.v1/consent =1 and  /scto.samplerosters.v1/userepeat =0 and  /scto.samplerosters.v1/numfamily &gt;=4" required="true()" type="select1"/>
+      <bind nodeset="/scto.samplerosters.v1/fam_age4" relevant=" /scto.samplerosters.v1/consent =1 and  /scto.samplerosters.v1/userepeat =0 and  /scto.samplerosters.v1/numfamily &gt;=4" required="true()" type="int"/>
+      <bind nodeset="/scto.samplerosters.v1/fam_gender5" relevant=" /scto.samplerosters.v1/consent =1 and  /scto.samplerosters.v1/userepeat =0 and  /scto.samplerosters.v1/numfamily &gt;=5" required="true()" type="select1"/>
+      <bind nodeset="/scto.samplerosters.v1/fam_age5" relevant=" /scto.samplerosters.v1/consent =1 and  /scto.samplerosters.v1/userepeat =0 and  /scto.samplerosters.v1/numfamily &gt;=5" required="true()" type="int"/>
+      <bind nodeset="/scto.samplerosters.v1/repeatintro" original="note" readonly="true()" relevant=" /scto.samplerosters.v1/consent =1 and  /scto.samplerosters.v1/userepeat =1" type="string"/>
+      <bind nodeset="/scto.samplerosters.v1/fam_group" relevant=" /scto.samplerosters.v1/consent =1 and  /scto.samplerosters.v1/userepeat =1"/>
+      <bind nodeset="/scto.samplerosters.v1/fam_group/fam_rg_name" relevant=" /scto.samplerosters.v1/consent =1 and  /scto.samplerosters.v1/userepeat =1" required="true()" type="string"/>
+      <bind nodeset="/scto.samplerosters.v1/fam_group/fam_rg_gender" relevant=" /scto.samplerosters.v1/consent =1 and  /scto.samplerosters.v1/userepeat =1" required="true()" type="select1"/>
+      <bind nodeset="/scto.samplerosters.v1/fam_group/fam_rg_age" relevant=" /scto.samplerosters.v1/consent =1 and  /scto.samplerosters.v1/userepeat =1" required="true()" type="int"/>
+      <bind nodeset="/scto.samplerosters.v1/conclusion" original="note" readonly="true()" relevant=" /scto.samplerosters.v1/consent =1" type="string"/>
+      <bind calculate="concat('uuid:', uuid())" nodeset="/scto.samplerosters.v1/meta/instanceID" readonly="true()" type="string"/>
+    </model>
+  </h:head>
+  <h:body>
+    <input appearance="intro" ref="/scto.samplerosters.v1/intronote">
+      <label>Welcome to the sample rosters form. Please swipe forward to continue.</label>
+    </input>
+    <select1 ref="/scto.samplerosters.v1/consent">
+      <label>Would you like to take the survey?</label>
+      <item>
+        <label>Yes</label>
+        <value>1</value>
+      </item>
+      <item>
+        <label>No</label>
+        <value>0</value>
+      </item>
+    </select1>
+    <input ref="/scto.samplerosters.v1/confirmnote">
+      <label>Now we will ask you about your family members.</label>
+    </input>
+    <select1 ref="/scto.samplerosters.v1/userepeat">
+      <label>Would you like to use a repeating group for the household roster?</label>
+      <hint>A repeating group has a different UI and data structure.</hint>
+      <item>
+        <label>Yes</label>
+        <value>1</value>
+      </item>
+      <item>
+        <label>No</label>
+        <value>0</value>
+      </item>
+    </select1>
+    <input ref="/scto.samplerosters.v1/numfamily">
+      <label>How many family members live with you?</label>
+    </input>
+    <input ref="/scto.samplerosters.v1/fam_name1">
+      <label>What is the name of the first other family member who lives with you?</label>
+    </input>
+    <input ref="/scto.samplerosters.v1/fam_name2">
+      <label>What is the name of the second other family member who lives with you?</label>
+    </input>
+    <input ref="/scto.samplerosters.v1/fam_name3">
+      <label>What is the name of the third other family member who lives with you?</label>
+    </input>
+    <input ref="/scto.samplerosters.v1/fam_name4">
+      <label>What is the name of the fourth other family member who lives with you?</label>
+    </input>
+    <input ref="/scto.samplerosters.v1/fam_name5">
+      <label>What is the name of the fifth other family member who lives with you?</label>
+    </input>
+    <input ref="/scto.samplerosters.v1/rosterpart2note">
+      <label>Now I will ask you a few more questions about each of these family members.</label>
+    </input>
+    <select1 ref="/scto.samplerosters.v1/fam_gender1">
+      <label>What is <output value=" /scto.samplerosters.v1/fam_name1 "/>'s gender?</label>
+      <item>
+        <label>Male</label>
+        <value>0</value>
+      </item>
+      <item>
+        <label>Female</label>
+        <value>1</value>
+      </item>
+    </select1>
+    <input ref="/scto.samplerosters.v1/fam_age1">
+      <label>What is <output value=" /scto.samplerosters.v1/fam_name1 "/>'s age?</label>
+    </input>
+    <select1 ref="/scto.samplerosters.v1/fam_gender2">
+      <label>What is <output value=" /scto.samplerosters.v1/fam_name2 "/>'s gender?</label>
+      <item>
+        <label>Male</label>
+        <value>0</value>
+      </item>
+      <item>
+        <label>Female</label>
+        <value>1</value>
+      </item>
+    </select1>
+    <input ref="/scto.samplerosters.v1/fam_age2">
+      <label>What is <output value=" /scto.samplerosters.v1/fam_name2 "/>'s age?</label>
+    </input>
+    <select1 ref="/scto.samplerosters.v1/fam_gender3">
+      <label>What is <output value=" /scto.samplerosters.v1/fam_name3 "/>'s gender?</label>
+      <item>
+        <label>Male</label>
+        <value>0</value>
+      </item>
+      <item>
+        <label>Female</label>
+        <value>1</value>
+      </item>
+    </select1>
+    <input ref="/scto.samplerosters.v1/fam_age3">
+      <label>What is <output value=" /scto.samplerosters.v1/fam_name3 "/>'s age?</label>
+    </input>
+    <select1 ref="/scto.samplerosters.v1/fam_gender4">
+      <label>What is <output value=" /scto.samplerosters.v1/fam_name4 "/>'s gender?</label>
+      <item>
+        <label>Male</label>
+        <value>0</value>
+      </item>
+      <item>
+        <label>Female</label>
+        <value>1</value>
+      </item>
+    </select1>
+    <input ref="/scto.samplerosters.v1/fam_age4">
+      <label>What is <output value=" /scto.samplerosters.v1/fam_name4 "/>'s age?</label>
+    </input>
+    <select1 ref="/scto.samplerosters.v1/fam_gender5">
+      <label>What is <output value=" /scto.samplerosters.v1/fam_name5 "/>'s gender?</label>
+      <item>
+        <label>Male</label>
+        <value>0</value>
+      </item>
+      <item>
+        <label>Female</label>
+        <value>1</value>
+      </item>
+    </select1>
+    <input ref="/scto.samplerosters.v1/fam_age5">
+      <label>What is <output value=" /scto.samplerosters.v1/fam_name5 "/>'s age?</label>
+    </input>
+    <input ref="/scto.samplerosters.v1/repeatintro">
+      <label>Now I will ask you a few questions about each family member living with you.</label>
+    </input>
+    <group ref="/scto.samplerosters.v1/fam_group">
+      <label>Family member</label>
+      <repeat nodeset="/scto.samplerosters.v1/fam_group">
+        <input ref="/scto.samplerosters.v1/fam_group/fam_rg_name">
+          <label>What is his or her name?</label>
+        </input>
+        <select1 ref="/scto.samplerosters.v1/fam_group/fam_rg_gender">
+          <label>What is his or her gender?</label>
+          <item>
+            <label>Male</label>
+            <value>0</value>
+          </item>
+          <item>
+            <label>Female</label>
+            <value>1</value>
+          </item>
+        </select1>
+        <input ref="/scto.samplerosters.v1/fam_group/fam_rg_age">
+          <label>What is his or her age?</label>
+        </input>
+      </repeat>
+    </group>
+    <input ref="/scto.samplerosters.v1/conclusion">
+      <label>Thank you. That concludes the survey.</label>
+    </input>
+  </h:body>
+</h:html>

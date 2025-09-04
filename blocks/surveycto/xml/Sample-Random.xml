@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa" xmlns:odk="http://www.opendatakit.org/xforms" xmlns:orx="http://openrosa.org/xforms/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <h:head>
+    <h:title>Sample Form - Randomization</h:title>
+    <model>
+      <instance>
+        <scto.samplerandom.v1 id="scto.samplerandom.v1" version="2509041616">
+          <starttime/>
+          <endtime/>
+          <deviceid/>
+          <devicephonenum/>
+          <device_info/>
+          <duration/>
+          <intronote/>
+          <consent/>
+          <consented>
+            <randomdraw1/>
+            <likesblue1/>
+            <likesblue2/>
+            <randomdraw2/>
+            <likesred1/>
+            <likesred2/>
+            <favoritecolor/>
+            <metadata/>
+          </consented>
+          <meta>
+            <instanceID/>
+          </meta>
+        </scto.samplerandom.v1>
+      </instance>
+      <bind jr:preload="timestamp" jr:preloadParams="start" nodeset="/scto.samplerandom.v1/starttime" type="dateTime"/>
+      <bind jr:preload="timestamp" jr:preloadParams="end" nodeset="/scto.samplerandom.v1/endtime" type="dateTime"/>
+      <bind jr:preload="property" jr:preloadParams="deviceid" nodeset="/scto.samplerandom.v1/deviceid" type="string"/>
+      <bind jr:preload="property" jr:preloadParams="phonenumber" nodeset="/scto.samplerandom.v1/devicephonenum" type="string"/>
+      <bind calculate="device-info()" nodeset="/scto.samplerandom.v1/device_info" type="string"/>
+      <bind calculate="duration()" nodeset="/scto.samplerandom.v1/duration" type="string"/>
+      <bind nodeset="/scto.samplerandom.v1/intronote" original="note" readonly="true()" type="string"/>
+      <bind nodeset="/scto.samplerandom.v1/consent" required="true()" type="select1"/>
+      <bind nodeset="/scto.samplerandom.v1/consented" relevant=" /scto.samplerandom.v1/consent =1"/>
+      <bind calculate="once(random())" nodeset="/scto.samplerandom.v1/consented/randomdraw1" type="string"/>
+      <bind nodeset="/scto.samplerandom.v1/consented/likesblue1" relevant=" /scto.samplerandom.v1/consented/randomdraw1  &lt;= 0.5" required="true()" type="select1"/>
+      <bind nodeset="/scto.samplerandom.v1/consented/likesblue2" relevant=" /scto.samplerandom.v1/consented/randomdraw1  &gt; 0.5" required="true()" type="select1"/>
+      <bind calculate="once(random())" nodeset="/scto.samplerandom.v1/consented/randomdraw2" type="string"/>
+      <bind nodeset="/scto.samplerandom.v1/consented/likesred1" relevant=" /scto.samplerandom.v1/consented/randomdraw2  &lt;= 0.5" required="true()" type="select1"/>
+      <bind nodeset="/scto.samplerandom.v1/consented/likesred2" relevant=" /scto.samplerandom.v1/consented/randomdraw2  &gt; 0.5" required="true()" type="select1"/>
+      <bind nodeset="/scto.samplerandom.v1/consented/favoritecolor" required="true()" type="select1"/>
+      <bind appearance="class=textAudit;choices" nodeset="/scto.samplerandom.v1/consented/metadata" type="binary"/>
+      <bind calculate="concat('uuid:', uuid())" nodeset="/scto.samplerandom.v1/meta/instanceID" readonly="true()" type="string"/>
+    </model>
+  </h:head>
+  <h:body>
+    <input appearance="intro" ref="/scto.samplerandom.v1/intronote">
+      <label>Welcome to the sample randomized form! Option order and question phrasing will be determined randomly. Please swipe forward to continue.</label>
+    </input>
+    <select1 appearance="randomized" ref="/scto.samplerandom.v1/consent">
+      <label>Would you like to continue?</label>
+      <item>
+        <label>Yes</label>
+        <value>1</value>
+      </item>
+      <item>
+        <label>No</label>
+        <value>0</value>
+      </item>
+    </select1>
+    <group ref="/scto.samplerandom.v1/consented">
+      <select1 appearance="randomized" ref="/scto.samplerandom.v1/consented/likesblue1">
+        <label>Do you like the color blue?</label>
+        <item>
+          <label>Yes</label>
+          <value>1</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>0</value>
+        </item>
+      </select1>
+      <select1 appearance="randomized" ref="/scto.samplerandom.v1/consented/likesblue2">
+        <label>Do you truly love the color blue?</label>
+        <item>
+          <label>Yes</label>
+          <value>1</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>0</value>
+        </item>
+      </select1>
+      <select1 appearance="randomized" ref="/scto.samplerandom.v1/consented/likesred1">
+        <label>Do you like the color red?</label>
+        <item>
+          <label>Yes</label>
+          <value>1</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>0</value>
+        </item>
+      </select1>
+      <select1 appearance="randomized" ref="/scto.samplerandom.v1/consented/likesred2">
+        <label>Do you truly love the color red?</label>
+        <item>
+          <label>Yes</label>
+          <value>1</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>0</value>
+        </item>
+      </select1>
+      <select1 appearance="randomized(0, 1)" ref="/scto.samplerandom.v1/consented/favoritecolor">
+        <label>What is your favorite color?</label>
+        <item>
+          <label>Red</label>
+          <value>red</value>
+        </item>
+        <item>
+          <label>Blue</label>
+          <value>blue</value>
+        </item>
+        <item>
+          <label>Green</label>
+          <value>green</value>
+        </item>
+        <item>
+          <label>Yellow</label>
+          <value>yellow</value>
+        </item>
+        <item>
+          <label>Orange</label>
+          <value>orange</value>
+        </item>
+        <item>
+          <label>Purple</label>
+          <value>purple</value>
+        </item>
+        <item>
+          <label>Brown</label>
+          <value>brown</value>
+        </item>
+        <item>
+          <label>Black</label>
+          <value>black</value>
+        </item>
+        <item>
+          <label>Other</label>
+          <value>other</value>
+        </item>
+      </select1>
+    </group>
+  </h:body>
+</h:html>

@@ -1,0 +1,373 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa" xmlns:odk="http://www.opendatakit.org/xforms" xmlns:orx="http://openrosa.org/xforms/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <h:head>
+    <h:title>Sample Form - Preloading</h:title>
+    <model>
+      <itext>
+        <translation default="true()" lang="english">
+          <text id="static_instance-yesno-0">
+            <value>Yes</value>
+          </text>
+          <text id="static_instance-yesno-1">
+            <value>No</value>
+          </text>
+          <text id="static_instance-plot-0">
+            <value><output value=" /scto.samplepreload.v1/consented/plot1description "/></value>
+          </text>
+          <text id="static_instance-plot-1">
+            <value><output value=" /scto.samplepreload.v1/consented/plot2description "/></value>
+          </text>
+          <text id="static_instance-plot-2">
+            <value><output value=" /scto.samplepreload.v1/consented/plot3description "/></value>
+          </text>
+          <text id="static_instance-plot-3">
+            <value><output value=" /scto.samplepreload.v1/consented/plot4description "/></value>
+          </text>
+          <text id="static_instance-plot-4">
+            <value><output value=" /scto.samplepreload.v1/consented/plot5description "/></value>
+          </text>
+          <text id="static_instance-plot-5">
+            <value><output value=" /scto.samplepreload.v1/consented/plot6description "/></value>
+          </text>
+          <text id="static_instance-plot-6">
+            <value><output value=" /scto.samplepreload.v1/consented/plot7description "/></value>
+          </text>
+          <text id="static_instance-plot-7">
+            <value><output value=" /scto.samplepreload.v1/consented/plot8description "/></value>
+          </text>
+          <text id="static_instance-plot-8">
+            <value><output value=" /scto.samplepreload.v1/consented/plot9description "/></value>
+          </text>
+          <text id="static_instance-plot-9">
+            <value><output value=" /scto.samplepreload.v1/consented/plot10description "/></value>
+          </text>
+        </translation>
+      </itext>
+      <instance>
+        <scto.samplepreload.v1 id="scto.samplepreload.v1" version="2509041648">
+          <starttime/>
+          <endtime/>
+          <deviceid/>
+          <devicephonenum/>
+          <device_info/>
+          <duration/>
+          <intronote/>
+          <consent/>
+          <consented>
+            <hhid/>
+            <confirmentry/>
+            <nplots/>
+            <plot1description/>
+            <plot1size/>
+            <plot2description/>
+            <plot2size/>
+            <plot3description/>
+            <plot3size/>
+            <plot4description/>
+            <plot4size/>
+            <plot5description/>
+            <plot5size/>
+            <plot6description/>
+            <plot6size/>
+            <plot7description/>
+            <plot7size/>
+            <plot8description/>
+            <plot8size/>
+            <plot9description/>
+            <plot9size/>
+            <plot10description/>
+            <plot10size/>
+            <nopreloadnote/>
+            <plots>
+              <bestplot/>
+              <plotsintro/>
+              <plot1cultivated/>
+              <plot2cultivated/>
+              <plot3cultivated/>
+              <plot4cultivated/>
+              <plot5cultivated/>
+              <plot6cultivated/>
+              <plot7cultivated/>
+              <plot8cultivated/>
+              <plot9cultivated/>
+              <plot10cultivated/>
+            </plots>
+            <endnote/>
+          </consented>
+          <meta>
+            <instanceID/>
+          </meta>
+        </scto.samplepreload.v1>
+      </instance>
+      <instance id="yesno">
+        <root>
+          <item>
+            <itextId>static_instance-yesno-0</itextId>
+            <name>1</name>
+          </item>
+          <item>
+            <itextId>static_instance-yesno-1</itextId>
+            <name>0</name>
+          </item>
+        </root>
+      </instance>
+      <instance id="plot">
+        <root>
+          <item>
+            <itextId>static_instance-plot-0</itextId>
+            <filter>1</filter>
+            <name>1</name>
+          </item>
+          <item>
+            <itextId>static_instance-plot-1</itextId>
+            <filter>2</filter>
+            <name>2</name>
+          </item>
+          <item>
+            <itextId>static_instance-plot-2</itextId>
+            <filter>3</filter>
+            <name>3</name>
+          </item>
+          <item>
+            <itextId>static_instance-plot-3</itextId>
+            <filter>4</filter>
+            <name>4</name>
+          </item>
+          <item>
+            <itextId>static_instance-plot-4</itextId>
+            <filter>5</filter>
+            <name>5</name>
+          </item>
+          <item>
+            <itextId>static_instance-plot-5</itextId>
+            <filter>6</filter>
+            <name>6</name>
+          </item>
+          <item>
+            <itextId>static_instance-plot-6</itextId>
+            <filter>7</filter>
+            <name>7</name>
+          </item>
+          <item>
+            <itextId>static_instance-plot-7</itextId>
+            <filter>8</filter>
+            <name>8</name>
+          </item>
+          <item>
+            <itextId>static_instance-plot-8</itextId>
+            <filter>9</filter>
+            <name>9</name>
+          </item>
+          <item>
+            <itextId>static_instance-plot-9</itextId>
+            <filter>10</filter>
+            <name>10</name>
+          </item>
+        </root>
+      </instance>
+      <bind jr:preload="timestamp" jr:preloadParams="start" nodeset="/scto.samplepreload.v1/starttime" type="dateTime"/>
+      <bind jr:preload="timestamp" jr:preloadParams="end" nodeset="/scto.samplepreload.v1/endtime" type="dateTime"/>
+      <bind jr:preload="property" jr:preloadParams="deviceid" nodeset="/scto.samplepreload.v1/deviceid" type="string"/>
+      <bind jr:preload="property" jr:preloadParams="phonenumber" nodeset="/scto.samplepreload.v1/devicephonenum" type="string"/>
+      <bind calculate="device-info()" nodeset="/scto.samplepreload.v1/device_info" type="string"/>
+      <bind calculate="duration()" nodeset="/scto.samplepreload.v1/duration" type="string"/>
+      <bind nodeset="/scto.samplepreload.v1/intronote" original="note" readonly="true()" type="string"/>
+      <bind nodeset="/scto.samplepreload.v1/consent" required="true()" type="select1"/>
+      <bind nodeset="/scto.samplepreload.v1/consented" relevant=" /scto.samplepreload.v1/consent =1"/>
+      <bind constraint=". &gt;= 1001 and . &lt;= 1061" nodeset="/scto.samplepreload.v1/consented/hhid" required="true()" type="int"/>
+      <bind constraint=".= /scto.samplepreload.v1/consented/hhid " jr:constraintMsg="The ID you re-entered does not match your first entry." nodeset="/scto.samplepreload.v1/consented/confirmentry" required="true()" type="int"/>
+      <bind calculate="pulldata('hhplotdetails', 'nplots', 'hhid_key',  /scto.samplepreload.v1/consented/hhid )" nodeset="/scto.samplepreload.v1/consented/nplots" type="string"/>
+      <bind calculate="pulldata('hhplotdetails', 'plot1description', 'hhid_key',  /scto.samplepreload.v1/consented/hhid )" nodeset="/scto.samplepreload.v1/consented/plot1description" type="string"/>
+      <bind calculate="pulldata('hhplotdetails', 'plot1size', 'hhid_key',  /scto.samplepreload.v1/consented/hhid )" nodeset="/scto.samplepreload.v1/consented/plot1size" type="string"/>
+      <bind calculate="pulldata('hhplotdetails', 'plot2description', 'hhid_key',  /scto.samplepreload.v1/consented/hhid )" nodeset="/scto.samplepreload.v1/consented/plot2description" type="string"/>
+      <bind calculate="pulldata('hhplotdetails', 'plot2size', 'hhid_key',  /scto.samplepreload.v1/consented/hhid )" nodeset="/scto.samplepreload.v1/consented/plot2size" type="string"/>
+      <bind calculate="pulldata('hhplotdetails', 'plot3description', 'hhid_key',  /scto.samplepreload.v1/consented/hhid )" nodeset="/scto.samplepreload.v1/consented/plot3description" type="string"/>
+      <bind calculate="pulldata('hhplotdetails', 'plot3size', 'hhid_key',  /scto.samplepreload.v1/consented/hhid )" nodeset="/scto.samplepreload.v1/consented/plot3size" type="string"/>
+      <bind calculate="pulldata('hhplotdetails', 'plot4description', 'hhid_key',  /scto.samplepreload.v1/consented/hhid )" nodeset="/scto.samplepreload.v1/consented/plot4description" type="string"/>
+      <bind calculate="pulldata('hhplotdetails', 'plot4size', 'hhid_key',  /scto.samplepreload.v1/consented/hhid )" nodeset="/scto.samplepreload.v1/consented/plot4size" type="string"/>
+      <bind calculate="pulldata('hhplotdetails', 'plot5description', 'hhid_key',  /scto.samplepreload.v1/consented/hhid )" nodeset="/scto.samplepreload.v1/consented/plot5description" type="string"/>
+      <bind calculate="pulldata('hhplotdetails', 'plot5size', 'hhid_key',  /scto.samplepreload.v1/consented/hhid )" nodeset="/scto.samplepreload.v1/consented/plot5size" type="string"/>
+      <bind calculate="pulldata('hhplotdetails', 'plot6description', 'hhid_key',  /scto.samplepreload.v1/consented/hhid )" nodeset="/scto.samplepreload.v1/consented/plot6description" type="string"/>
+      <bind calculate="pulldata('hhplotdetails', 'plot6size', 'hhid_key',  /scto.samplepreload.v1/consented/hhid )" nodeset="/scto.samplepreload.v1/consented/plot6size" type="string"/>
+      <bind calculate="pulldata('hhplotdetails', 'plot7description', 'hhid_key',  /scto.samplepreload.v1/consented/hhid )" nodeset="/scto.samplepreload.v1/consented/plot7description" type="string"/>
+      <bind calculate="pulldata('hhplotdetails', 'plot7size', 'hhid_key',  /scto.samplepreload.v1/consented/hhid )" nodeset="/scto.samplepreload.v1/consented/plot7size" type="string"/>
+      <bind calculate="pulldata('hhplotdetails', 'plot8description', 'hhid_key',  /scto.samplepreload.v1/consented/hhid )" nodeset="/scto.samplepreload.v1/consented/plot8description" type="string"/>
+      <bind calculate="pulldata('hhplotdetails', 'plot8size', 'hhid_key',  /scto.samplepreload.v1/consented/hhid )" nodeset="/scto.samplepreload.v1/consented/plot8size" type="string"/>
+      <bind calculate="pulldata('hhplotdetails', 'plot9description', 'hhid_key',  /scto.samplepreload.v1/consented/hhid )" nodeset="/scto.samplepreload.v1/consented/plot9description" type="string"/>
+      <bind calculate="pulldata('hhplotdetails', 'plot9size', 'hhid_key',  /scto.samplepreload.v1/consented/hhid )" nodeset="/scto.samplepreload.v1/consented/plot9size" type="string"/>
+      <bind calculate="pulldata('hhplotdetails', 'plot10description', 'hhid_key',  /scto.samplepreload.v1/consented/hhid )" nodeset="/scto.samplepreload.v1/consented/plot10description" type="string"/>
+      <bind calculate="pulldata('hhplotdetails', 'plot10size', 'hhid_key',  /scto.samplepreload.v1/consented/hhid )" nodeset="/scto.samplepreload.v1/consented/plot10size" type="string"/>
+      <bind nodeset="/scto.samplepreload.v1/consented/nopreloadnote" original="note" readonly="true()" relevant="empty( /scto.samplepreload.v1/consented/nplots )" type="string"/>
+      <bind nodeset="/scto.samplepreload.v1/consented/plots" relevant="not(empty( /scto.samplepreload.v1/consented/nplots ))"/>
+      <bind nodeset="/scto.samplepreload.v1/consented/plots/bestplot" required="true()" type="select1"/>
+      <bind nodeset="/scto.samplepreload.v1/consented/plots/plotsintro" original="note" readonly="true()" type="string"/>
+      <bind nodeset="/scto.samplepreload.v1/consented/plots/plot1cultivated" relevant=" /scto.samplepreload.v1/consented/nplots  &gt;= 1" required="true()" type="select1"/>
+      <bind nodeset="/scto.samplepreload.v1/consented/plots/plot2cultivated" relevant=" /scto.samplepreload.v1/consented/nplots  &gt;= 2" required="true()" type="select1"/>
+      <bind nodeset="/scto.samplepreload.v1/consented/plots/plot3cultivated" relevant=" /scto.samplepreload.v1/consented/nplots  &gt;= 3" required="true()" type="select1"/>
+      <bind nodeset="/scto.samplepreload.v1/consented/plots/plot4cultivated" relevant=" /scto.samplepreload.v1/consented/nplots  &gt;= 4" required="true()" type="select1"/>
+      <bind nodeset="/scto.samplepreload.v1/consented/plots/plot5cultivated" relevant=" /scto.samplepreload.v1/consented/nplots  &gt;= 5" required="true()" type="select1"/>
+      <bind nodeset="/scto.samplepreload.v1/consented/plots/plot6cultivated" relevant=" /scto.samplepreload.v1/consented/nplots  &gt;= 6" required="true()" type="select1"/>
+      <bind nodeset="/scto.samplepreload.v1/consented/plots/plot7cultivated" relevant=" /scto.samplepreload.v1/consented/nplots  &gt;= 7" required="true()" type="select1"/>
+      <bind nodeset="/scto.samplepreload.v1/consented/plots/plot8cultivated" relevant=" /scto.samplepreload.v1/consented/nplots  &gt;= 8" required="true()" type="select1"/>
+      <bind nodeset="/scto.samplepreload.v1/consented/plots/plot9cultivated" relevant=" /scto.samplepreload.v1/consented/nplots  &gt;= 9" required="true()" type="select1"/>
+      <bind nodeset="/scto.samplepreload.v1/consented/plots/plot10cultivated" relevant=" /scto.samplepreload.v1/consented/nplots  &gt;= 10" required="true()" type="select1"/>
+      <bind nodeset="/scto.samplepreload.v1/consented/endnote" original="note" readonly="true()" type="string"/>
+      <bind calculate="concat('uuid:', uuid())" nodeset="/scto.samplepreload.v1/meta/instanceID" readonly="true()" type="string"/>
+    </model>
+  </h:head>
+  <h:body>
+    <input ref="/scto.samplepreload.v1/intronote">
+      <label>Welcome to the sample pre-load plots form, a sample household survey with pre-loaded information about each household's agricultural plots. Please swipe forward to continue.</label>
+    </input>
+    <select1 ref="/scto.samplepreload.v1/consent">
+      <label>Do you consent to participate in this survey?</label>
+      <item>
+        <label>Yes</label>
+        <value>1</value>
+      </item>
+      <item>
+        <label>No</label>
+        <value>0</value>
+      </item>
+    </select1>
+    <group appearance="organized" ref="/scto.samplepreload.v1/consented">
+      <label>Sample preload module</label>
+      <input ref="/scto.samplepreload.v1/consented/hhid">
+        <label>Please enter the household's ID.</label>
+        <hint>Valid IDs are between 1001 and 1060.</hint>
+      </input>
+      <input ref="/scto.samplepreload.v1/consented/confirmentry">
+        <label>Please re-enter the household's ID as confirmation.</label>
+      </input>
+      <input ref="/scto.samplepreload.v1/consented/nopreloadnote">
+        <label>No pre-loaded data was found for this household. Therefore, plot-specific questions will be skipped.</label>
+      </input>
+      <group ref="/scto.samplepreload.v1/consented/plots">
+        <label>Plots</label>
+        <select1 ref="/scto.samplepreload.v1/consented/plots/bestplot">
+          <label>Please select your best-performing plot in the most recent agricultural season.</label>
+          <itemset nodeset="instance('plot')/root/item[filter &lt;=  /scto.samplepreload.v1/consented/nplots ]">
+            <value ref="name"/>
+            <label ref="jr:itext(itextId)"/>
+          </itemset>
+        </select1>
+        <input ref="/scto.samplepreload.v1/consented/plots/plotsintro">
+          <label>I will now ask you a series of questions about each of your <output value=" /scto.samplepreload.v1/consented/nplots "/> agricultural plots.</label>
+        </input>
+        <select1 ref="/scto.samplepreload.v1/consented/plots/plot1cultivated">
+          <label>Did you cultivate your &quot;<output value=" /scto.samplepreload.v1/consented/plot1description "/>&quot; (size <output value=" /scto.samplepreload.v1/consented/plot1size "/>) plot in the most recent season?</label>
+          <item>
+            <label>Yes</label>
+            <value>1</value>
+          </item>
+          <item>
+            <label>No</label>
+            <value>0</value>
+          </item>
+        </select1>
+        <select1 ref="/scto.samplepreload.v1/consented/plots/plot2cultivated">
+          <label>Did you cultivate your &quot;<output value=" /scto.samplepreload.v1/consented/plot2description "/>&quot; (size <output value=" /scto.samplepreload.v1/consented/plot2size "/>) plot in the most recent season?</label>
+          <item>
+            <label>Yes</label>
+            <value>1</value>
+          </item>
+          <item>
+            <label>No</label>
+            <value>0</value>
+          </item>
+        </select1>
+        <select1 ref="/scto.samplepreload.v1/consented/plots/plot3cultivated">
+          <label>Did you cultivate your &quot;<output value=" /scto.samplepreload.v1/consented/plot3description "/>&quot; (size <output value=" /scto.samplepreload.v1/consented/plot3size "/>) plot in the most recent season?</label>
+          <item>
+            <label>Yes</label>
+            <value>1</value>
+          </item>
+          <item>
+            <label>No</label>
+            <value>0</value>
+          </item>
+        </select1>
+        <select1 ref="/scto.samplepreload.v1/consented/plots/plot4cultivated">
+          <label>Did you cultivate your &quot;<output value=" /scto.samplepreload.v1/consented/plot4description "/>&quot; (size <output value=" /scto.samplepreload.v1/consented/plot4size "/>) plot in the most recent season?</label>
+          <item>
+            <label>Yes</label>
+            <value>1</value>
+          </item>
+          <item>
+            <label>No</label>
+            <value>0</value>
+          </item>
+        </select1>
+        <select1 ref="/scto.samplepreload.v1/consented/plots/plot5cultivated">
+          <label>Did you cultivate your &quot;<output value=" /scto.samplepreload.v1/consented/plot5description "/>&quot; (size <output value=" /scto.samplepreload.v1/consented/plot5size "/>) plot in the most recent season?</label>
+          <item>
+            <label>Yes</label>
+            <value>1</value>
+          </item>
+          <item>
+            <label>No</label>
+            <value>0</value>
+          </item>
+        </select1>
+        <select1 ref="/scto.samplepreload.v1/consented/plots/plot6cultivated">
+          <label>Did you cultivate your &quot;<output value=" /scto.samplepreload.v1/consented/plot6description "/>&quot; (size <output value=" /scto.samplepreload.v1/consented/plot6size "/>) plot in the most recent season?</label>
+          <item>
+            <label>Yes</label>
+            <value>1</value>
+          </item>
+          <item>
+            <label>No</label>
+            <value>0</value>
+          </item>
+        </select1>
+        <select1 ref="/scto.samplepreload.v1/consented/plots/plot7cultivated">
+          <label>Did you cultivate your &quot;<output value=" /scto.samplepreload.v1/consented/plot7description "/>&quot; (size <output value=" /scto.samplepreload.v1/consented/plot7size "/>) plot in the most recent season?</label>
+          <item>
+            <label>Yes</label>
+            <value>1</value>
+          </item>
+          <item>
+            <label>No</label>
+            <value>0</value>
+          </item>
+        </select1>
+        <select1 ref="/scto.samplepreload.v1/consented/plots/plot8cultivated">
+          <label>Did you cultivate your &quot;<output value=" /scto.samplepreload.v1/consented/plot8description "/>&quot; (size <output value=" /scto.samplepreload.v1/consented/plot8size "/>) plot in the most recent season?</label>
+          <item>
+            <label>Yes</label>
+            <value>1</value>
+          </item>
+          <item>
+            <label>No</label>
+            <value>0</value>
+          </item>
+        </select1>
+        <select1 ref="/scto.samplepreload.v1/consented/plots/plot9cultivated">
+          <label>Did you cultivate your &quot;<output value=" /scto.samplepreload.v1/consented/plot9description "/>&quot; (size <output value=" /scto.samplepreload.v1/consented/plot9size "/>) plot in the most recent season?</label>
+          <item>
+            <label>Yes</label>
+            <value>1</value>
+          </item>
+          <item>
+            <label>No</label>
+            <value>0</value>
+          </item>
+        </select1>
+        <select1 ref="/scto.samplepreload.v1/consented/plots/plot10cultivated">
+          <label>Did you cultivate your &quot;<output value=" /scto.samplepreload.v1/consented/plot10description "/>&quot; (size <output value=" /scto.samplepreload.v1/consented/plot10size "/>) plot in the most recent season?</label>
+          <item>
+            <label>Yes</label>
+            <value>1</value>
+          </item>
+          <item>
+            <label>No</label>
+            <value>0</value>
+          </item>
+        </select1>
+      </group>
+      <input ref="/scto.samplepreload.v1/consented/endnote">
+        <label>Thank you. That concludes the sample survey.</label>
+      </input>
+    </group>
+  </h:body>
+</h:html>
