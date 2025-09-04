@@ -1,0 +1,39 @@
+{
+  "templates": [
+    {
+      "id": "odk.template.base-odk.v1",
+      "path": "templates/odk/base_v1.xlsx",
+      "platform": "odk",
+      "title": "Base (ODK)",
+      "description": ""
+    },
+    {
+      "id": "odk.template.household-odk.v1",
+      "path": "templates/odk/household_v1.xlsx",
+      "platform": "odk",
+      "title": "Household (ODK)",
+      "description": ""
+    },
+    {
+      "id": "surveycto.template.base-surveycto.v1",
+      "path": "templates/surveycto/base_v1.xlsx",
+      "platform": "surveycto",
+      "title": "Base (SurveyCTO)",
+      "description": ""
+    }
+  ],
+  "blocks": [
+    {
+      "id": "surveycto.patterns.xml.v1",
+      "path": "blocks/surveycto/patterns/xml",
+      "platform": "surveycto",
+      "title": "xml"
+    },
+    {
+      "id": "surveycto.patterns.xml.v1",
+      "path": "blocks/surveycto/patterns/xml",
+      "platform": "surveycto",
+      "title": "xml"
+    }
+  ]
+}

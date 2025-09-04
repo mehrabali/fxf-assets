@@ -1,0 +1,17 @@
+{
+  "id": "surveycto.patterns.xml.v1",
+  "platform": "surveycto",
+  "version": 1,
+  "category": "patterns",
+  "title": "xml",
+  "placement": {
+    "where": "end"
+  },
+  "merge": {
+    "body": "append",
+    "binds": "merge",
+    "itext": "merge",
+    "instances": "merge"
+  },
+  "assets": []
+}
